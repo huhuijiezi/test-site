@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block mainContent %}
+<a class="float-right small" href="/post">Sumit New Post</a>
+{% if posts|length > 0 %}
+	<ul class="list-inline ml-2">
+	{% for post in posts %}
+		<li class="list-inline ml-0 border-0 mb-4">
+		{% embed 'post.embed.twig' with {post: post} %}{% endembed %}
+	{% endfor %}
+		</li>
+	</ul>
+{% endif %}
+
+{% endblock %}

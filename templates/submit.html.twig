@@ -1,0 +1,18 @@
+{% extends "layout.html.twig" %}
+
+{% block mainContent %}
+	<form action="/post" method="post">
+		<div class="mb-3">
+			<label>Title:</label>
+			<br>
+			<input type="text" size="60" name="title" value="{{ title }}" placeholder="Enter title here">
+		</div>
+		<div class="mb-3">
+			<label>Content:</label>
+			<br>
+			<textarea name="content" value="{{ content }}" rows="5" cols="59" placeholder="Enter content here"></textarea>
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+
+{% endblock %}

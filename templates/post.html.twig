@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% if post|length > 0 %}
+	{% set currentPost = post[0] %}
+{% endif %}
+
+{% block mainContent %}
+	{% if currentPost is defined %}
+		<h1 class="h1">{{ currentPost.title }}</h1>
+		<p>{{ currentPost.content }}</p>
+	{% else %}
+		<h1 class="h1">oooops, something went wrong!</h1>
+	{% endif %}
+
+{% endblock %}

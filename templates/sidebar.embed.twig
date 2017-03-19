@@ -1,0 +1,31 @@
+<div>
+	<h4 class="h4">5 recent posts:</h4>
+	<div class="sidebar-block p-3">
+		<header class="small">Lists of links to last 5 posts</header>
+		<div>
+			<ul>
+				{% for post in recentPosts %}
+					<li class="small">
+						<a href="/post/{{ post.post_id }}">{{ post.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="mt-4">
+	<h4 class="h4">Archives</h4>
+	<div class="sidebar-block p-3">
+		<header class="small">Last 12 months with number of posts:</header>
+		<div>
+			<ul>
+				{% for archive in archives %}
+					<li class="small">
+						<a href="/archive/{{ archive.year }}/{{ archive.month }}">{{ archive.monthName ~ ' ' ~ archive.year ~ ' (' ~ archive.count ~ ')' }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

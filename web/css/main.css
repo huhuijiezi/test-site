@@ -1,0 +1,36 @@
+.border-bottom {
+	border-bottom: 2px solid black;
+}
+
+.border-right {
+	border-right: 2px solid black;
+}
+
+.border-top {
+	border-top: 2px solid black;
+}
+
+.post p{
+	max-height: 9.5em;
+	height: auto;
+	overflow-y: hidden;
+}
+
+li:last-child .post {
+	border-bottom: 0;
+}
+
+.sidebar-block{
+	background-color: #FAFAD2;
+	color:brown;
+	border: lightgray 1px solid;
+}
+
+.sidebar-block a{
+	color:brown;
+}
+
+a.deco-none {
+	color: inherit;
+	text-decoration:none;
+}
