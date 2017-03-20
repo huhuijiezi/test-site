@@ -85,7 +85,7 @@ class HomeController {
 		$title = $request->get('title');
 		$content = $request->get('content');
 
-		if (isset($title) && isset($content)) {
+		if (!isset($title) && !isset($content)) {
 			$postId = $db->savePost($title, $content);
 		}
 
