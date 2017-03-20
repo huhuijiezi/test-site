@@ -81,15 +81,18 @@ class HomeController {
 	public static function postSubmitForm(Application $app, Request $request) {
 
 		$db = new Post($app['db']);
-
+		$postId = null;
 		$title = $request->get('title');
 		$content = $request->get('content');
 
-		$postId = $db->savePost($title,$content);
-		if($postId){
+		if (isset($title) && isset($content)) {
+			$postId = $db->savePost($title, $content);
+		}
+
+		if ($postId) {
 			return $app->redirect($app["url_generator"]->generate("homepage"));
 
-		}else{
+		} else {
 			return $app->redirect($app["url_generator"]->generate("submitForm"));
 		}
 	}
